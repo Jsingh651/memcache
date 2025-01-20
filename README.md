@@ -12,3 +12,17 @@ High-performance in-memory key-value store with TCP protocol, LRU eviction, and 
 
 ## Build & Run
 
+```bash
+make
+./memcache --port 7379
+```
+
+## Protocol
+
+```
+SET key value
+GET key
+DEL key
+STATS
+QUIT
+```
