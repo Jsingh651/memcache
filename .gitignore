@@ -1,0 +1,4 @@
+memcache
+*.o
+*.dSYM/
+build/
