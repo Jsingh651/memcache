@@ -18,3 +18,4 @@ clean:
 test: $(TARGET)
 	./tests/run_tests.sh
 
+.PHONY: all clean test
