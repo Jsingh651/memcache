@@ -8,3 +8,13 @@ all: $(TARGET)
 
 $(TARGET): $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $^
+
+%.o: %.c include/memcache.h
+	$(CC) $(CFLAGS) -c -o $@ $<
+
+clean:
+	rm -f $(OBJS) $(TARGET)
+
+test: $(TARGET)
+	./tests/run_tests.sh
+
