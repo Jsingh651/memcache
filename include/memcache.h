@@ -26,3 +26,17 @@ typedef struct mc_hash {
 typedef struct mc_stats {
     uint64_t gets, sets, deletes, hits, misses, evictions;
 } mc_stats_t;
+
+typedef struct mc_config {
+    int port;
+    size_t max_entries;
+    int verbose;
+} mc_config_t;
+
+typedef struct mc_server {
+    int listen_fd;
+    mc_hash_t store;
+    mc_stats_t stats;
+    mc_config_t config;
+} mc_server_t;
+
