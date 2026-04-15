@@ -12,3 +12,17 @@
 typedef struct mc_entry {
     char *key;
     char *value;
+    size_t value_len;
+    time_t accessed;
+    struct mc_entry *next;
+} mc_entry_t;
+
+typedef struct mc_hash {
+    mc_entry_t **buckets;
+    size_t capacity;
+    size_t count;
+} mc_hash_t;
+
+typedef struct mc_stats {
+    uint64_t gets, sets, deletes, hits, misses, evictions;
+} mc_stats_t;
