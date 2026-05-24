@@ -54,3 +54,4 @@ void mc_server_shutdown(mc_server_t *s);
 int mc_parse_command(const char *line, char *cmd, char *key, char *value);
 void mc_log(int level, const char *fmt, ...);
 
+#endif
