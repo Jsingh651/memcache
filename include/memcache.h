@@ -40,3 +40,17 @@ typedef struct mc_server {
     mc_config_t config;
 } mc_server_t;
 
+int mc_hash_init(mc_hash_t *h, size_t capacity);
+void mc_hash_free(mc_hash_t *h);
+int mc_hash_set(mc_hash_t *h, const char *key, const char *value, mc_stats_t *stats);
+const char *mc_hash_get(mc_hash_t *h, const char *key, mc_stats_t *stats);
+int mc_hash_del(mc_hash_t *h, const char *key, mc_stats_t *stats);
+void mc_hash_evict_lru(mc_hash_t *h, mc_stats_t *stats);
+
+int mc_server_init(mc_server_t *s, const mc_config_t *cfg);
+void mc_server_run(mc_server_t *s);
+void mc_server_shutdown(mc_server_t *s);
+
+int mc_parse_command(const char *line, char *cmd, char *key, char *value);
+void mc_log(int level, const char *fmt, ...);
+
